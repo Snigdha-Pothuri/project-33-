@@ -1,17 +1,14 @@
-const Engine = Matter.Engine;
-const World= Matter.World;
-const Bodies = Matter.Bodies;
-//const Constraint = Matter.Constraint;
-
-var engine, world; 
+ 
 var score = 0; 
 var count=0;
 
 var plinkos=[];
 var particles;
 var divisions=[];
-var divisionheight = 300; 
-var gameState = "PLAY";
+var divisionheight = 300;  
+var PLAY = 1; 
+var END = 0;
+var gameState = PLAY;
 
 function setup() {
   createCanvas(800,400); 
@@ -74,7 +71,7 @@ function draw() {
         score = score+500; 
         particle=null; 
         if(count>=5) {
-          gameState="end";
+          gameState=END;
         }
        }
      }
